@@ -51,7 +51,10 @@ const VelkommenPage = () => {
                             <BodyLong size="large">
                                 <AppText
                                     id="velkommenPage.guide.tekst"
-                                    values={{ barnetsNavn: <strong>{barnetsNavn}</strong>, samletSøknadsperiodeTekst }}
+                                    values={{
+                                        barnetsNavn: <strong key="barnetsNavn">{barnetsNavn}</strong>,
+                                        samletSøknadsperiodeTekst,
+                                    }}
                                 />
                             </BodyLong>
                             <Block margin="xl">

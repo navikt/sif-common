@@ -20,7 +20,7 @@ const ArbeidsaktivitetUtenforPeriodeInfo: React.FunctionComponent<Props> = ({
     const intlValues = {
         førDato: dateFormatter.full(tillattEndringsperiode.from),
         etterDato: dateFormatter.full(tillattEndringsperiode.to),
-        skrivTilOssLink: <SkrivTilOssLink />,
+        skrivTilOssLink: <SkrivTilOssLink key="lenke" />,
     };
     return (
         <BodyShort style={{ paddingBottom: '1rem' }}>
