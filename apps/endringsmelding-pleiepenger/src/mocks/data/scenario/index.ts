@@ -5,6 +5,7 @@ import { ArbeidsgiverOgFrilanser } from './arbeidsgiver-og-frilanser/Arbeidsgive
 import { ArbeidsgivereOgFrilanser } from './arbeidsgivere-og-frilanser/ArbeidsgivereOgFrilanser';
 import { Debug } from './debug/Debug';
 import { EnArbeidsgiverEnPeriode } from './en-arbeidsgiver-en-periode/EnArbeidsgiverEnPeriode';
+import { EnArbeidsgiverMedAvsluttetOgNyttArbeidsforhold } from './en-arbeidsgiver-med-avsluttet-og-nytt-arbeidsforhold/EnArbeidsgiverMedAvsluttetOgNyttArbeidsforhold';
 import { EnArbeidsgiverToPerioder } from './en-arbeidsgiver-to-perioder/EnArbeidsgiverToPerioder';
 import { FlereSaker } from './flere-saker/FlereSaker';
 import { IngenSak } from './ingen-sak/IngenSak';
@@ -17,6 +18,7 @@ type ScenarioMap = {
 
 export const mockData: ScenarioMap = {
     ['en-arbeidsgiver-en-periode']: EnArbeidsgiverEnPeriode,
+    ['en-arbeidsgiver-med-avsluttet-og-nytt-arbeidsforhold']: EnArbeidsgiverMedAvsluttetOgNyttArbeidsforhold,
     ['en-arbeidsgiver-to-perioder']: EnArbeidsgiverToPerioder,
     ['arbeidsgiver-og-frilanser']: ArbeidsgiverOgFrilanser,
     ['arbeidsgivere-og-frilanser']: ArbeidsgivereOgFrilanser,

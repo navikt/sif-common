@@ -1,6 +1,7 @@
 export type ScenarioType =
     | 'en-arbeidsgiver-en-periode'
     | 'en-arbeidsgiver-to-perioder'
+    | 'en-arbeidsgiver-med-avsluttet-og-nytt-arbeidsforhold'
     | 'arbeidsgiver-og-frilanser'
     | 'arbeidsgivere-og-frilanser'
     | 'arbeidsgiver-ikke-i-sak'
@@ -28,6 +29,11 @@ export const scenarioer: Scenario[] = [
     {
         name: 'Én arbeidsgiver - to perioder',
         value: 'en-arbeidsgiver-to-perioder',
+        harTilgang: true,
+    },
+    {
+        name: 'Én arbeidsgiver - med avsluttet og nytt arbeidsforhold',
+        value: 'en-arbeidsgiver-med-avsluttet-og-nytt-arbeidsforhold',
         harTilgang: true,
     },
     {
