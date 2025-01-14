@@ -1,4 +1,4 @@
-import { StoryFormikWrapper } from '../components/StoryFormikWrapper';
+import { StoryFormikWrapper } from '@components/StoryFormikWrapper';
 
 export const withFormikWrapper = (Story, args) => (
     <StoryFormikWrapper {...args}>

@@ -1,9 +1,9 @@
+import { applicationIntlMessages } from '@i18n/index';
 import { isProd } from '@navikt/sif-common-env';
 import { ensureBaseNameForReactRouter, SoknadApplication } from '@navikt/sif-common-soknad-ds/src';
-import { applicationIntlMessages } from './i18n';
-import Søknad from './søknad/Søknad';
-import { appEnv } from './types/appEnv';
-import '@navikt/ds-css';
+import { appEnv } from '@utils/appEnv';
+import InitialDataLoader from './sites/InitialDataLoader';
+import './app.css';
 
 const {
     PUBLIC_PATH,
@@ -33,7 +33,7 @@ const App = () => {
             }}
             useAmplitude={SIF_PUBLIC_USE_AMPLITUDE ? SIF_PUBLIC_USE_AMPLITUDE === 'true' : isProd()}
             amplitudeApiKey={SIF_PUBLIC_AMPLITUDE_API_KEY}>
-            <Søknad />
+            <InitialDataLoader />
         </SoknadApplication>
     );
 };

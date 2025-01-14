@@ -1,6 +1,6 @@
 import { Table } from '@navikt/ds-react';
 import { dateFormatter } from '@navikt/sif-common-utils';
-import { Deltakelse } from '../../api/types';
+import { Deltakelse } from '@api/types';
 import Inntektsrapportering from '../inntektsrapportering/Inntektsrapportering';
 
 interface Props {

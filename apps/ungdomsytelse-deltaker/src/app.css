@@ -1,0 +1,12 @@
+@import 'tailwindcss/base';
+@import '@navikt/ds-css';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@navikt/sif-common-core-ds/src/styles/sif-ds-theme.css';
+
+.navds-guide-panel__content > .navds-body-long p:first-child {
+    margin-top: 0;
+}
+.navds-guide-panel__content > .navds-body-long p:last-child {
+    margin-bottom: 0;
+}

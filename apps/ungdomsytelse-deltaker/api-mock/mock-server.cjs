@@ -57,6 +57,7 @@ const mockPath = `${__dirname}/data`;
 const soker = 'søker1';
 
 const søkerFileName = `søker-mock.json`;
+const barnFileName = `barn-mock.json`;
 const innvilgetVedtakFileName = `innvilget-vedtak-mock.json`;
 const ikkeInnvilgetVedtakFileName = `ikke-innvilget-vedtak-mock.json`;
 
@@ -79,13 +80,19 @@ const startExpressServer = () => {
         }, 250);
     });
 
+    server.get('/oppslag/barn', (req, res) => {
+        setTimeout(() => {
+            readMockFile(barnFileName, res);
+        }, 250);
+    });
+
     server.get('/deltakelse/register/hent/alle', (req, res) => {
         const response = [
             {
                 id: '123',
                 programperiodeFraOgMed: '2024-07-01',
                 programperiodeTilOgMed: '2025-06-30',
-                harSøkt: true,
+                harSøkt: false,
                 rapporteringsPerioder: [
                     {
                         fraOgMed: '2024-07-01',

@@ -50,14 +50,14 @@ const registrertDeltaker = {
 };
 
 const deltakelse1 = {
-    id: '3ebb8cb3-a2eb-45a5-aeee-22a2766aaab0',
+    id: '3ebb8cb3-a2eb-45a5-aeee-22a2766aaab0-1',
     deltakerIdent: '03867198392',
     deltaker: {
         id: 'd-r',
         deltakerIdent: '03867198392',
     },
-    fraOgMed: '2024-09-01',
-    tilOgMed: '2025-01-01',
+    fraOgMed: '2025-01-01',
+    tilOgMed: '2025-05-01',
     harSøkt: true,
 };
 const deltakelse2 = {

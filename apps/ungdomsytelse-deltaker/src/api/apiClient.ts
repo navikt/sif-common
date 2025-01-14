@@ -1,5 +1,5 @@
+import { appEnv } from '@utils/appEnv';
 import axios, { AxiosRequestConfig } from 'axios';
-import { appEnv } from '../types/appEnv';
 
 const axiosConfig: AxiosRequestConfig = {
     withCredentials: false,

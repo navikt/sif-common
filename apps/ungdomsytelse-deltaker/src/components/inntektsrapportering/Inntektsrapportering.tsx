@@ -1,6 +1,6 @@
 import { Alert, BodyShort, Box, Heading, VStack } from '@navikt/ds-react';
 import { dateFormatter, dateRangeFormatter } from '@navikt/sif-common-utils';
-import { Deltakelse } from '../../api/types';
+import { Deltakelse } from '@api/types';
 import { useAppIntl } from '../../i18n';
 import { getMånederForInnteksrapportering } from '../../utils/deltakelserUtils';
 import InntektsrapporteringForm from './InnteksrapporteringForm';

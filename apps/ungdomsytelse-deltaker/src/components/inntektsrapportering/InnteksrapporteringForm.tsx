@@ -2,7 +2,7 @@ import { Box, Heading, VStack } from '@navikt/ds-react';
 import { getMånederForInnteksrapportering } from '../../utils/deltakelserUtils';
 import InntektEnMånedForm from './InntektEnMånedForm';
 import { FormLayout } from '@navikt/sif-common-ui';
-import { Deltakelse } from '../../api/types';
+import { Deltakelse } from '@api/types';
 
 interface Props {
     deltakelse: Deltakelse;

@@ -2,8 +2,18 @@
     "extends": "../../packages/config/tsconfig-apps.json",
     "compilerOptions": {
         "outDir": "build/dist",
-        "typeRoots": ["../../node_modules/@types", "./node_modules/@types"]
+        "typeRoots": ["../../node_modules/@types", "./node_modules/@types"],
+        "baseUrl": "./",
+        "paths": {
+            "@api/*": ["./src/api/*"],
+            "@components/*": ["./src/components/*"],
+            "@context/*": ["./src/context/*"],
+            "@hooks/*": ["./src/hooks/*"],
+            "@i18n/*": ["./src/i18n/*"],
+            "@types/*": ["./src/types/*"],
+            "@utils/*": ["./src/utils/*"]
+        }
     },
     "exclude": ["node_modules", "src/build", "**.js", "dist"],
-    "include": ["./src/**/*"]
+    "include": ["./src/**/*", "./mock/msw/**/*"]
 }

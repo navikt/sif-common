@@ -1,8 +1,8 @@
-import { SøknadContextProvider } from '../../app/søknad/context/SøknadContext';
-import { SøknadContextState } from '../../app/types/SøknadContextState';
+import { DeltakerContextProvider } from '../../app/søknad/context/DeltakerContext';
+import { DeltakerContextState } from '../../app/types/DeltakerContextState';
 import { RegistrerteBarnMock, SøkerMock } from '../mock-data';
 
-export const mockInitialSøknadContextState: SøknadContextState = {
+export const mockInitialDeltakerContextState: DeltakerContextState = {
     versjon: '1.0.0',
     søker: SøkerMock,
     registrerteBarn: RegistrerteBarnMock,
@@ -12,8 +12,8 @@ export const mockInitialSøknadContextState: SøknadContextState = {
     børMellomlagres: false,
 };
 
-export const withSøknadContextProvider = (Story: any, state: Partial<SøknadContextState> = {}) => (
-    <SøknadContextProvider initialData={{ ...mockInitialSøknadContextState, ...state }}>
+export const withDeltakerContextProvider = (Story: any, state: Partial<DeltakerContextState> = {}) => (
+    <DeltakerContextProvider initialData={{ ...mockInitialDeltakerContextState, ...state }}>
         <Story />
-    </SøknadContextProvider>
+    </DeltakerContextProvider>
 );

@@ -1,6 +1,6 @@
 import { DateRange } from '@navikt/sif-common-formik-ds';
 import { useState } from 'react';
-import { deltakerService } from '../api/services/deltakerService';
+import { deltakerService } from '@api/services/deltakerService';
 import { dateToISODate } from '@navikt/sif-common-utils';
 import { isAxiosError } from 'axios';
 

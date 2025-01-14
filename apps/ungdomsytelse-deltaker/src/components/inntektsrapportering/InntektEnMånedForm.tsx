@@ -1,4 +1,4 @@
-import { Deltakelse } from '../../api/types';
+import { Deltakelse } from '@api/types';
 import { DateRange, dateToISOString, getTypedFormComponents, ValidationError } from '@navikt/sif-common-formik-ds';
 
 import { capsFirstCharacter, dateFormatter } from '@navikt/sif-common-utils';
@@ -6,7 +6,7 @@ import { Alert, Box, Button, Heading, HStack } from '@navikt/ds-react';
 import getIntlFormErrorHandler from '@navikt/sif-common-formik-ds/src/validation/intlFormErrorHandler';
 import { useAppIntl } from '../../i18n';
 import { getNumberValidator } from '@navikt/sif-common-formik-ds/src/validation';
-import { useRapporterInntekt } from '../../hooks/useRapporterInntekt';
+import { useRapporterInntekt } from '@hooks/useRapporterInntekt';
 import TimedContent from '../timed-content/TimedContent';
 
 interface Props {

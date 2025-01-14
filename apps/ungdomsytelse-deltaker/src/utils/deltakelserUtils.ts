@@ -1,7 +1,7 @@
+import { Deltakelse } from '@api/types';
 import { DateRange } from '@navikt/sif-common-formik-ds';
 import { getDateToday } from '@navikt/sif-common-utils';
 import dayjs from 'dayjs';
-import { Deltakelse } from '../api/types';
 
 export const periodeKanRapporteresFor = (periode: DateRange): boolean => {
     return dayjs(periode.from).isBefore(getDateToday());
