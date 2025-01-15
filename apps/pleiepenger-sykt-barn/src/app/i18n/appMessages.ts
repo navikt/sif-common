@@ -463,7 +463,7 @@ const nb = {
     'page.confirmation.tittel.1': 'Vi har mottatt søknaden din om pleiepenger for sykt barn',
 
     'page.confirmation.tittel.advarsel.list.tittel':
-        'Husk å be arbeidsgiver(e) å sende inntektsmelding så snart som mulig hvis:',
+        'Vi kontakter arbeidsgivere du har fravær hos, for å informere om at de må sende inntektsmelding. Dette er aktuelt hvis:',
     'page.confirmation.tittel.advarsel.list.item.1': 'du søker for første gang, eller',
     'page.confirmation.tittel.advarsel.list.item.2': 'det er mer enn 4 uker siden du hadde pleiepenger sist',
 

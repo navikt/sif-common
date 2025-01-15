@@ -23,6 +23,10 @@ const ArbeidsgivereISøknad: React.FunctionComponent<Props> = ({ søknadId, arbe
                 <FormattedMessage id="bekreftelseTilArbeidsgiver.info" />
             </p>
 
+            <p className="mt-4">
+                <FormattedMessage id="bekreftelseTilArbeidsgiver.info.1" />
+            </p>
+
             <List className="mt-4">
                 {arbeidsgivere.map((organisasjon) => (
                     <li key={organisasjon.organisasjonsnummer}>

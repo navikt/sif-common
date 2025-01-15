@@ -38,6 +38,8 @@ const arbeidIPeriodeSpørsmål = {
     nb: {
         'arbeidIPeriode.spørsmål.ANSATT.arbeiderIPerioden':
             'Hvilken situasjon gjelder for deg {hvor} i søknadsperioden?',
+        'arbeidIPeriode.ANSATT.kontaktArbeidsgiver.info':
+            'Vi kontakter arbeidsgiveren din hvis vi trenger inntektsmelding for å behandle søknaden.',
         'arbeidIPeriode.spørsmål.ANSATT.erLiktHverUke': 'Jobber du like mye hver uke {hvor} i perioden?',
         'arbeidIPeriode.spørsmål.ANSATT.timerEllerProsent':
             'Hvordan vil du oppgi hvor mye du jobber {hvor} i perioden?',

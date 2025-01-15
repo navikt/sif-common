@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAppIntl } from '@i18n/index';
+import { AppText, useAppIntl } from '@i18n/index';
 import FormBlock from '@navikt/sif-common-core-ds/src/atoms/form-block/FormBlock';
 import { YesOrNo } from '@navikt/sif-common-formik-ds/src';
 import { FormikRadioProp } from '@navikt/sif-common-formik-ds/src/components/formik-radio-group/FormikRadioGroup';
@@ -28,6 +28,7 @@ import {
     getArbeidIPeriodeTimerEllerProsentValidator,
 } from '../validationArbeidIPeriodeSpørsmål';
 import ArbeidstidEnkeltuker from './ArbeidstidEnkeltuker';
+import { Alert } from '@navikt/ds-react';
 
 interface Props {
     arbeidsforholdType: ArbeidsforholdType;
@@ -62,6 +63,11 @@ const ArbeidIPeriodeSpørsmål: React.FunctionComponent<Props> = ({
         (visKunArbeidstidPerUke || formValues?.erLiktHverUke === YesOrNo.NO);
 
     const spørsmål = getArbeidstidSpørsmålstekst(appIntl, arbeidsforholdType, intlValues);
+
+    const visInntektsmeldingInfo =
+        arbeidsforholdType === ArbeidsforholdType.ANSATT &&
+        (formValues?.arbeiderIPerioden === ArbeiderIPeriodenSvar.redusert ||
+            formValues?.arbeiderIPerioden === ArbeiderIPeriodenSvar.heltFravær);
     return (
         <>
             <SøknadFormComponents.RadioGroup
@@ -86,6 +92,13 @@ const ArbeidIPeriodeSpørsmål: React.FunctionComponent<Props> = ({
                     ]
                 }
             />
+
+            {visInntektsmeldingInfo && (
+                <Alert variant="info" className="mt-4">
+                    <AppText id="arbeidIPeriode.ANSATT.kontaktArbeidsgiver.info" />
+                </Alert>
+            )}
+
             {formValues?.arbeiderIPerioden === ArbeiderIPeriodenSvar.redusert && (
                 <FormBlock margin="l">
                     <ResponsivePanel border={true}>

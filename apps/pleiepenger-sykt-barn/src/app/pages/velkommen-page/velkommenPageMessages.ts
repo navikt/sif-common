@@ -39,7 +39,8 @@ const nb = {
     'personopplysninger.2':
         'Vi innhenter og mottar opplysninger om deg for å behandle saken din. Det er nødvendig for at du skal få riktig tjeneste. Deler av saken din behandles automatisk.',
     'personopplysninger.3': 'Hvilke opplysninger innhenter vi?',
-    'personopplysninger.4': 'Opplysningene vi innhenter kommer enten fra deg eller fra offentlige registre:',
+    'personopplysninger.4':
+        'Opplysningene vi innhenter kommer enten fra deg, arbeidsgiver eller fra offentlige registre:',
     'personopplysninger.4.1': 'hvilke barn du er registrert som forelder til',
     'personopplysninger.4.2': 'opplysninger om barnets helse',
     'personopplysninger.4.3': 'arbeidsforholdene dine og inntekten din',

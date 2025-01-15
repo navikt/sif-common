@@ -115,7 +115,9 @@ export const nb = {
     'dokumenter.ingenDokumenter': 'Dokumenter ikke tilgjengelig.',
     'bekreftelseTilArbeidsgiver.title': 'Bekreftelse til arbeidsgiver',
     'bekreftelseTilArbeidsgiver.info':
-        'Dette er en bekreftelse som du kan gi til arbeidsgiver. Den bekrefter at vi har fått søknad om pleiepenger fra deg, hvilken periode du har søkt pleiepenger og informasjon om når arbeidsgiver må sende inntektsmelding.',
+        'Dette er en bekreftelse som du kan gi til arbeidsgiver. Den bekrefter at vi har fått søknad om pleiepenger fra deg og hvilken periode du har søkt om pleiepenger.',
+    'bekreftelseTilArbeidsgiver.info.1':
+        'Vi kontakter arbeidsgiver for å be dem sende inntektsmelding hvis og når vi trenger det.',
     'dokumenterSomKanLastesNed.tittel': 'Dokumenter som kan lastes ned',
     'dokumenterSomKanLastesNed.bekreftelse': 'Bekreftelse til {organisasjonsnavn}',
 
@@ -166,8 +168,7 @@ export const nb = {
 
     'venteårsakMelding.inntektsmelding.tittel': 'Vi mangler inntektsmelding fra en eller flere arbeidsgivere',
     'venteårsakMelding.inntektsmelding.info':
-        'Vi har sendt brev til deg og arbeidsgiveren din, fordi vi mangler inntektsmelding. For å behandle søknaden og beregne hvor mye pleiepenger du kan få, må arbeidsgiver sende inntektsmelding.',
-    'venteårsakMelding.inntektsmelding.dokumentarkivLenke': '<lenke>Se brev i dokumentarkivet</lenke>',
+        'Vi har informert arbeidsgiver om at de må sende oss inntektsmelding. Vi må ha inntektsmelding for å behandle søknaden og beregne hvor mye pleiepenger du kan få.',
 
     'venteårsakMelding.søktForTidlig.tittel': 'Vi kan ikke behandle søknaden din enda',
     'venteårsakMelding.søktForTidlig.info':

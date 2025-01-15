@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { Heading } from '@navikt/ds-react';
+import { Alert, Heading } from '@navikt/ds-react';
 import { useState } from 'react';
 import Block from '@navikt/sif-common-core-ds/src/atoms/block/Block';
 import FormBlock from '@navikt/sif-common-core-ds/src/atoms/form-block/FormBlock';
@@ -243,6 +243,14 @@ const ArbeidstidStep = () => {
                                                         <Heading level="2" size="medium">
                                                             {arbeidsforhold.navn}
                                                         </Heading>
+
+                                                        <Alert variant="info" className="mt-4 mb-4">
+                                                            <AppText
+                                                                id={
+                                                                    'arbeidIPeriode.arbeidstaker.kontaktArbeidsgiver.info'
+                                                                }
+                                                            />
+                                                        </Alert>
                                                         <Block>
                                                             <ArbeidIPeriodeSpørsmål
                                                                 arbeidsstedNavn={arbeidsforhold.navn}

@@ -96,6 +96,10 @@ const InnsendtSøknadContent: React.FunctionComponent<Props> = ({ søknad }) => 
                     <p>
                         <AppText id="bekreftelseTilArbeidsgiver.info" />
                     </p>
+
+                    <p className="mt-4">
+                        <AppText id="bekreftelseTilArbeidsgiver.info.1" />
+                    </p>
                     {'arbeidsgivere' in søknad.søknad &&
                         'organisasjoner' in søknad.søknad.arbeidsgivere &&
                         søknad.søknad.arbeidsgivere.organisasjoner.length > 0 && (

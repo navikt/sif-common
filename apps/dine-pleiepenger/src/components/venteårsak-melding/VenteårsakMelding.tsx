@@ -50,12 +50,6 @@ const VenteårsakMelding: React.FunctionComponent<Props> = ({ venteårsak }) => 
                     <BodyLong className="mb-2 mt-2">
                         <AppText id="venteårsakMelding.inntektsmelding.info" />
                     </BodyLong>
-                    <AppText
-                        id="venteårsakMelding.inntektsmelding.dokumentarkivLenke"
-                        values={{
-                            lenke: (txt) => <DokumentarkivLenke tekst={txt} />,
-                        }}
-                    />
                 </Alert>
             );
         case Venteårsak.FOR_TIDLIG_SOKNAD:
