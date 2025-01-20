@@ -1,6 +1,6 @@
 import { DateRange, durationToDecimalDuration } from '@navikt/sif-common-utils';
 import {
-    Arbeidsgiver,
+    ArbeidsgiverForEndring,
     IngenTilgangÅrsak,
     K9Sak,
     K9SakArbeidstaker,
@@ -92,7 +92,7 @@ const getIngenTilgangMeta = (arbeidstid: K9SakArbeidstid): IngenTilgangMeta => {
 };
 
 const harArbeidsgiverUtenArbeidsaktivitet = (
-    arbeidsgivere: Arbeidsgiver[],
+    arbeidsgivere: ArbeidsgiverForEndring[],
     k9SakArbeidstaker: K9SakArbeidstaker[] = [],
 ): boolean => {
     return arbeidsgivere.some((arbeidsgiver) => {

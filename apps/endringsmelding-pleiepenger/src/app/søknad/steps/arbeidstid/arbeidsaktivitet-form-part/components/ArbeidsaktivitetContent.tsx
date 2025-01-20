@@ -73,6 +73,7 @@ const ArbeidsaktivitetContent: React.FunctionComponent<Props> = ({
                 )}
                 visEndringSomOpprinnelig={erNyArbeidsgiver}
                 triggerResetValgCounter={resetUkerTabellCounter}
+                arbeidsgivernavn={arbeidsaktivitet.navn}
                 onEndreUker={(uker: ArbeidstidUkerItem[]) => {
                     setArbeidsukerForEndring(uker.map((uke) => periode.arbeidsuker[uke.isoDateRange]));
                 }}
@@ -172,6 +173,7 @@ const ArbeidsaktivitetContent: React.FunctionComponent<Props> = ({
                 isVisible={arbeidsukerForEndring !== undefined}
                 onClose={() => setArbeidsukerForEndring(undefined)}>
                 <EndreArbeidstidForm
+                    arbeidsgivernavn={arbeidsaktivitet.navn}
                     arbeidsuker={arbeidsukerForEndring || []}
                     lovbestemtFerie={lovbestemtFerie}
                     endring={

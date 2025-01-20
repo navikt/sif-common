@@ -8,12 +8,19 @@ interface Props {
     erKortUke?: boolean;
     dagerMedFerie: Date[] | undefined;
     dagerMedFjernetFerie?: Date[] | undefined;
+    arbeidsdagerIkkeAnsatt: Date[] | undefined;
     visDagNavn?: boolean;
 }
 
-const UkeTags = ({ dagerMedFerie = [], dagerMedFjernetFerie = [], visDagNavn, erKortUke }: Props) => {
+const UkeTags = ({
+    dagerMedFerie = [],
+    dagerMedFjernetFerie = [],
+    visDagNavn,
+    erKortUke,
+    arbeidsdagerIkkeAnsatt = [],
+}: Props) => {
     const tags: React.ReactNode[] = [];
-    if (erKortUke) {
+    if (erKortUke || arbeidsdagerIkkeAnsatt.length > 0) {
         tags.push(<KortUkeTag style={{ marginRight: '.5rem', marginBottom: '.25rem' }} />);
     }
     if (dagerMedFerie?.length > 0) {

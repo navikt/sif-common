@@ -2,7 +2,7 @@ import { isForbidden, isUnauthorized } from '@navikt/sif-common-core-ds/src/util
 import { getMaybeEnv } from '@navikt/sif-common-env';
 import { DateRange, dateRangeUtils } from '@navikt/sif-common-utils';
 import {
-    Arbeidsgiver,
+    ArbeidsgiverForEndring,
     IngenTilgangÅrsak,
     isK9Sak,
     isUgyldigK9SakFormat,
@@ -32,7 +32,7 @@ export const fetchInitialData = async (
     søker: Søker;
     k9saker: K9Sak[];
     antallSakerFørEndringsperiode: number;
-    arbeidsgivere: Arbeidsgiver[];
+    arbeidsgivere: ArbeidsgiverForEndring[];
     lagretSøknadState?: SøknadStatePersistence;
 }> => {
     const [søker, k9sakerResult] = await Promise.all([søkerEndpoint.fetch(), sakerEndpoint.fetch()]);
@@ -53,7 +53,7 @@ export const fetchInitialData = async (
 
     try {
         let k9saker: K9Sak[];
-        let arbeidsgivere: Arbeidsgiver[];
+        let arbeidsgivere: ArbeidsgiverForEndring[];
 
         const sakerInnenforEndringsperiode = k9sakerResult.k9Saker;
         const sakerFørEndringsperiode = k9sakerResult.eldreSaker;

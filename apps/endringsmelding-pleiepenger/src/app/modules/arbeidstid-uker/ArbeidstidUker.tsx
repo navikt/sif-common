@@ -21,6 +21,7 @@ interface Props {
     paginering?: {
         antall: number;
     };
+    arbeidsgivernavn: string;
     arbeidstidKolonneTittel?: string;
     triggerResetValgCounter?: number;
     visEndringSomOpprinnelig?: boolean;
@@ -35,7 +36,7 @@ const ArbeidstidUker: React.FunctionComponent<Props> = ({
     arbeidstidKolonneTittel,
     triggerResetValgCounter,
     visEndringSomOpprinnelig,
-
+    arbeidsgivernavn,
     onEndreUker,
 }) => {
     const { text, intl } = useAppIntl();
@@ -57,6 +58,7 @@ const ArbeidstidUker: React.FunctionComponent<Props> = ({
     const renderCompactTable = useMediaQuery({ minWidth: 736 }) === false && renderAsList === false;
 
     const korteUker = visibleItems.filter((i) => i.erKortUke).map((uke) => uke.periode);
+    const ukerMedDagerIkkeAnsatt = visibleItems.filter((i) => i.dagerIkkeAnsatt.length > 0).map((uke) => uke.periode);
     const ukerMedFerie = visibleItems
         .filter((i) => i.ferie && i.ferie?.dagerMedFerie.length > 0)
         .map((uke) => uke.periode);
@@ -103,7 +105,10 @@ const ArbeidstidUker: React.FunctionComponent<Props> = ({
                     setItemsAreSelectable(checked);
                 }}
                 ukerKanVelges={itemsAreSelectable}
-                visKorteUkerMelding={itemsAreSelectable && (ukerMedFerie.length > 0 || korteUker.length > 0)}
+                visKorteUkerMelding={
+                    itemsAreSelectable &&
+                    (ukerMedFerie.length > 0 || korteUker.length > 0 || ukerMedDagerIkkeAnsatt.length > 0)
+                }
             />
         ) : undefined;
 
@@ -166,6 +171,7 @@ const ArbeidstidUker: React.FunctionComponent<Props> = ({
             {renderEndreUkerHeader()}
 
             <ArbeidstidUkeTabell
+                arbeidsgivernavn={arbeidsgivernavn}
                 uker={visibleItems}
                 selectableList={selectableList}
                 visEndringSomOpprinnelig={visEndringSomOpprinnelig}

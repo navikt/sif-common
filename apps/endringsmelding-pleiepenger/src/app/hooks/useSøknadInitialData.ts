@@ -3,7 +3,7 @@ import { getMaybeEnv } from '@navikt/sif-common-env';
 import { useEffectOnce } from '@navikt/sif-common-hooks';
 import { DateRange } from '@navikt/sif-common-utils';
 import {
-    Arbeidsgiver,
+    ArbeidsgiverForEndring,
     IngenTilgangÅrsak,
     K9Sak,
     RequestStatus,
@@ -47,7 +47,7 @@ const prepInitialData = (
         søker: Søker;
         k9saker: K9Sak[];
         antallSakerFørEndringsperiode: number;
-        arbeidsgivere: Arbeidsgiver[];
+        arbeidsgivere: ArbeidsgiverForEndring[];
         lagretSøknadState?: SøknadStatePersistence;
     },
     tillattEndringsperiode: DateRange,

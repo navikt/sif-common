@@ -743,6 +743,13 @@ export const getFirstDateInDateRanges = (dateRanges: DateRange[]): Date | undefi
     return dates[0];
 };
 
+export const ensureDateRange = (maybeDateRange: MaybeDateRange, fallbackDateRange: DateRange): DateRange => {
+    return {
+        from: maybeDateRange.from || fallbackDateRange.from,
+        to: maybeDateRange.to || fallbackDateRange.to,
+    };
+};
+
 // const dateRangeDifference = (range1: DateRange[], range2: DateRange[]): DateRange[] {
 //   const difference: DateRange[] = [];
 //   range1.forEach((r1) => {
@@ -763,6 +770,7 @@ export const dateRangeUtils = {
     dateRangeIsAdjacentToDateRange,
     dateRangesCollide,
     dateRangeToISODateRange,
+    ensureDateRange,
     datesCollideWithDateRanges,
     getDateRangeFromDates,
     getDateRangeFromDateRanges,

@@ -56,43 +56,11 @@ export default [
                             organisasjonsnummer: '947064649',
                             arbeidstidInfo: {
                                 perioder: {
-                                    '2022-12-01/2022-12-02': {
+                                    '2020-12-01/2023-12-31': {
                                         jobberNormaltTimerPerDag: 'PT8H',
                                         faktiskArbeidTimerPerDag: 'PT4H32M24S',
                                     },
-                                    '2022-12-05/2022-12-09': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2022-12-12/2022-12-16': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2022-12-19/2022-12-23': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2022-12-26/2022-12-30': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2023-01-02/2023-01-06': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2023-01-09/2023-01-13': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2023-01-16/2023-01-20': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2023-01-23/2023-01-27': {
-                                        jobberNormaltTimerPerDag: 'PT8H',
-                                        faktiskArbeidTimerPerDag: 'PT4H32M24S',
-                                    },
-                                    '2023-01-30/2024-05-31': {
+                                    '2024-02-01/2024-03-01': {
                                         jobberNormaltTimerPerDag: 'PT8H',
                                         faktiskArbeidTimerPerDag: 'PT4H32M24S',
                                     },

@@ -25,6 +25,7 @@ import UkeTags from '../arbeidstid-uker/components/UkeTags';
 import { getArbeidstidSpørsmålDescription, getArbeidsukerPerÅr } from './endreArbeidstidFormUtils';
 import { getEndreArbeidstidIntlValues } from './endreArbeidstidIntlValues';
 import './endreArbeidstidForm.scss';
+import KortUkeEllerIkkeAnsattInformasjon from '../arbeidstid-uker/components/KortUkeEllerIkkeAnsattInfo';
 
 type EndreArbeidstidData = {
     perioder: DateRange[];
@@ -35,6 +36,7 @@ export interface EndreArbeidstidFormProps {
     arbeidsuker: Arbeidsuke[];
     lovbestemtFerie?: LovbestemtFerieSøknadsdata;
     endring?: ArbeidstidEndring;
+    arbeidsgivernavn: string;
     onSubmit: (data: EndreArbeidstidData) => void;
     onCancel: () => void;
 }
@@ -61,6 +63,7 @@ const EndreArbeidstidForm: React.FunctionComponent<EndreArbeidstidFormProps> = (
     arbeidsuker,
     lovbestemtFerie,
     endring,
+    arbeidsgivernavn,
     onCancel,
     onSubmit,
 }) => {
@@ -106,8 +109,6 @@ const EndreArbeidstidForm: React.FunctionComponent<EndreArbeidstidFormProps> = (
     const dagerMedFjernetFerie = lovbestemtFerie
         ? getFeriedagerIUke(lovbestemtFerie.feriedagerMeta.datoerFjernet, arbeidsuker[0].periode, true)
         : [];
-
-    const gjelderKortUke = arbeidsuker.length === 1 && erKortArbeidsuke(arbeidsuker[0].periode);
 
     const getMaksTimer = () => {
         const antallDager = arbeidsuker.length === 1 ? arbeidsuker[0].antallDagerMedArbeidstid : 7;
@@ -155,7 +156,6 @@ const EndreArbeidstidForm: React.FunctionComponent<EndreArbeidstidFormProps> = (
                                 </Ingress>
                             </Block>
                         </Block>
-
                         {dagerMedFjernetFerie && dagerMedFjernetFerie.length > 0 && (
                             <Block margin="s" padBottom="l">
                                 <Alert variant="warning">
@@ -198,16 +198,12 @@ const EndreArbeidstidForm: React.FunctionComponent<EndreArbeidstidFormProps> = (
                                 </ToggleGroup.Item>
                             </ToggleGroup>
 
-                            {gjelderKortUke && (
-                                <Block margin="xl">
-                                    <Alert variant="info" inline={false}>
-                                        <AppText
-                                            id="endreArbeidstidForm.kortUke.info"
-                                            values={{ dager: getDagerTekst(arbeidsuker[0].periode) }}
-                                        />
-                                    </Alert>
-                                </Block>
-                            )}
+                            {arbeidsuker.length === 1 ? (
+                                <KortUkeEllerIkkeAnsattInformasjon
+                                    arbeidsuke={arbeidsuker[0]}
+                                    arbeidsgivernavn={arbeidsgivernavn}
+                                />
+                            ) : null}
 
                             <FormBlock paddingBottom="l">
                                 {timerEllerProsent === TimerEllerProsent.PROSENT && (
@@ -280,7 +276,11 @@ const getUkerOgÅrBeskrivelse = (
                 {getArbeidstidSpørsmålDescription(arbeidsuker[0], intl.locale)}
                 {dagerMedFerie.length > 0 && (
                     <Block margin="m">
-                        <UkeTags visDagNavn={true} dagerMedFerie={dagerMedFerie} />
+                        <UkeTags
+                            visDagNavn={true}
+                            dagerMedFerie={dagerMedFerie}
+                            arbeidsdagerIkkeAnsatt={arbeidsuker[0].dagerIkkeAnsatt}
+                        />
                     </Block>
                 )}
             </BodyShort>

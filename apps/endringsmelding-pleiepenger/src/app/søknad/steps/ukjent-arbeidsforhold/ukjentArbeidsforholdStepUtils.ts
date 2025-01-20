@@ -1,7 +1,7 @@
 import { getNumberFromNumberInputValue, IntlErrorObject, YesOrNo } from '@navikt/sif-common-formik-ds';
 import { getNumberValidator, getYesOrNoValidator } from '@navikt/sif-common-formik-ds/src/validation';
 import { decimalDurationToDuration, durationToDecimalDuration } from '@navikt/sif-common-utils';
-import { Arbeidsforhold, Arbeidsgiver, UkjentArbeidsforholdSøknadsdata } from '@types';
+import { Arbeidsforhold, ArbeidsgiverForEndring, UkjentArbeidsforholdSøknadsdata } from '@types';
 import {
     UkjentArbeidsforholdFormValues,
     UkjentArbeidsgiverFormField,
@@ -25,7 +25,7 @@ const arbeidsforholdSøknadsdataToFormValues = (
 
 const ukjentArbeidsgiverFormValuesToSøknadsdata = (
     formValues: UkjentArbeidsforholdArbeidsgiverFormValues,
-    arbeidsgiver?: Arbeidsgiver,
+    arbeidsgiver?: ArbeidsgiverForEndring,
 ): Arbeidsforhold | undefined => {
     if (!arbeidsgiver) {
         return undefined;
@@ -54,7 +54,7 @@ const ukjentArbeidsgiverFormValuesToSøknadsdata = (
 export const getUkjentArbeidsforholdStepInitialValues = (
     ukjentArbeidsforholdSøknadsdata: UkjentArbeidsforholdSøknadsdata | undefined,
     formValues: UkjentArbeidsforholdFormValues | undefined,
-    arbeidsgivereIkkeISak: Arbeidsgiver[],
+    arbeidsgivereIkkeISak: ArbeidsgiverForEndring[],
 ): UkjentArbeidsforholdFormValues => {
     if (formValues) {
         return formValues;
@@ -79,7 +79,7 @@ export const getUkjentArbeidsforholdStepInitialValues = (
 
 export const getUkjentArbeidsforholdSøknadsdataFromFormValues = (
     values: UkjentArbeidsforholdFormValues,
-    arbeidsgivere: Arbeidsgiver[],
+    arbeidsgivere: ArbeidsgiverForEndring[],
 ): UkjentArbeidsforholdSøknadsdata => {
     const arbeidsforhold: Arbeidsforhold[] = [];
     Object.keys(values.arbeidsforhold).forEach((key) => {

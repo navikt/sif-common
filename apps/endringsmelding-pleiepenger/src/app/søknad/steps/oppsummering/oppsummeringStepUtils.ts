@@ -61,6 +61,7 @@ const getArbeidsukeListItemFromArbeidstidPeriodeApiData = (
         periode,
         antallDagerMedArbeidstid,
         erKortUke: erKortArbeidsuke(periode),
+        dagerIkkeAnsatt: [], //TODO
         opprinnelig: {
             normalt: getTimerPerUkeFraTimerPerDag(
                 ISODurationToDuration(_opprinneligNormaltPerDag),

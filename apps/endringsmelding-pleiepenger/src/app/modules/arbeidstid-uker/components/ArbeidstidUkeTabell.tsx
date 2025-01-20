@@ -9,11 +9,12 @@ import { SelectableListType } from '../../../hooks/useSelectableList';
 import { AppText, useAppIntl } from '../../../i18n';
 import { ArbeidstidUkerItem } from '../types/ArbeidstidUkerItem';
 import ArbeidstidUkeInfo from './ArbeidstidUkeInfo';
-import UkeInfoIkon from './UkeInfo';
+import UkeInfoTooltip from './UkeInfoTooltip';
 import UkeTags from './UkeTags';
 import VelgArbeidsukeItem from './VelgArbeidsukeItem';
 
 interface Props {
+    arbeidsgivernavn: string;
     uker: ArbeidstidUkerItem[];
     selectableList: SelectableListType<ArbeidstidUkerItem>;
     visEndringSomOpprinnelig?: boolean;
@@ -29,6 +30,7 @@ const ArbeidstidUkeTabell: React.FunctionComponent<Props> = ({
     selectableList,
     arbeidstidKolonneTittel,
     renderCompactTable,
+    arbeidsgivernavn,
     renderEditButton,
 }) => {
     const { text, intl } = useAppIntl();
@@ -150,6 +152,7 @@ const ArbeidstidUkeTabell: React.FunctionComponent<Props> = ({
                                                 dagerMedFerie={uke.ferie?.dagerMedFerie}
                                                 dagerMedFjernetFerie={uke.ferie?.dagerMedFjernetFerie}
                                                 erKortUke={uke.erKortUke}
+                                                arbeidsdagerIkkeAnsatt={uke.dagerIkkeAnsatt}
                                             />
                                         </Block>
                                     )}
@@ -173,12 +176,15 @@ const ArbeidstidUkeTabell: React.FunctionComponent<Props> = ({
                                                             <UkeTags
                                                                 dagerMedFerie={uke.ferie?.dagerMedFerie}
                                                                 dagerMedFjernetFerie={uke.ferie?.dagerMedFjernetFerie}
+                                                                arbeidsdagerIkkeAnsatt={uke.dagerIkkeAnsatt}
                                                             />
                                                         </Block>
                                                     )}
                                                 </span>
                                                 <span className="arbeidsukeTidsrom__info">
-                                                    {uke.erKortUke && <UkeInfoIkon uke={uke} />}
+                                                    {(uke.erKortUke || uke.dagerIkkeAnsatt.length > 0) && (
+                                                        <UkeInfoTooltip uke={uke} arbeidsgivernavn={arbeidsgivernavn} />
+                                                    )}
                                                 </span>
                                             </div>
                                         </div>
